@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Formulário de cadastro</title>
+</head>
+
+<body>
+  <div class="box">
+    <div class="formulario">
+      <form class="principal__formulario" id="formulario" target="_blank" onsubmit="location.replace('./cadastro-finalizado.html')">
+        <label>E-mail:</label> 
+        <input name="email" type="text" class="input" id="campo_email" placeholder="Digite seu Email" required>
+        <label>CPF:</label> 
+        <input type="text" id="campo_cpf" placeholder="Apenas Números" required>    
+
+        <input class="submit" type="submit" value="Enviar formulário" id="enviar">
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
