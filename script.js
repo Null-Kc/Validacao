@@ -1,21 +1,43 @@
 //VARIAVEIS
+Resposta_cpf = "";
+
+Resposta_Email = "";
+
 validacoes = 0;
 
+function Validacao(){ // Verifica se os campos estao validados
+   if(Resposta_cpf == true && Resposta_Email  == true){
+      validacoes = 2;
+      
+   }
+   if(Resposta_cpf == false && Resposta_Email  == true){
+      validacoes = 1;
+      
+   }
+   if(Resposta_cpf == true && Resposta_Email  == false){
+      validacoes = 1;
+   }
+
+   if(Resposta_cpf == false && Resposta_Email  == false){
+      validacoes = 1;
+   }
+}
 
 //BOTÃO
-let botao = document.querySelector('#enviar');
+let Botao = document.querySelector('#enviar');
 
-function Botao_enviar(){ // Faz a verificacao dos campos para enviar o formulario
+Botao.addEventListener("click", Botao_enviar, false);
+
+function Botao_enviar(event){ // Faz a verificacao dos campos para enviar o formulario
    if(validacoes == 2){
       location.replace('./cadastro-finalizado.html')
    }
 
    else {
       alert("DIGITE CAMPOS VALIDOS");
-      document.location.reload(false);
+      event.preventDefault();
    }
 }
-
 
 //CPF 
 let Cpf = document.querySelector('#campo_cpf');
@@ -119,33 +141,46 @@ Cpf.addEventListener("blur", function(e) {
          Verificacao_Cpf = Validar_cpf(Array_Cpf);
 
          if(Verificacao_Cpf == true){
-            alert("CPF VALIDO");
-            validacoes = validacoes + 1;
+            document.getElementById("cpf_resposta").innerHTML = "";
+            Resposta_cpf = true;
+            Validacao();
          } 
 
          else {
-            alert("CPF INVALIDO");
+            document.getElementById("cpf_resposta").innerHTML = "CPF INVALIDO";
+            Resposta_cpf = false;
+            Validacao();
          }
       }
       
       else {
-         alert("CPF INVALIDO");
+         document.getElementById("cpf_resposta").innerHTML = "CPF INVALIDO";
+         Resposta_cpf = false;
+         Validacao();
       }
+   }
+   else {
+      document.getElementById("cpf_resposta").innerHTML = "CPF INVALIDO";
+      Resposta_cpf = false;
+      Validacao();
    }
 
 });
 
 
 //EMAIL
-let value_email = document.querySelector('#campo_email');
+let Email = document.querySelector('#campo_email');
 
-value_email.addEventListener("blur", function(e) {
+Email.addEventListener("blur", function(e) {
    
    if( document.forms[0].email.value == "" || document.forms[0].email.value.indexOf('@') == -1 || document.forms[0].email.value.indexOf('.') == -1 ) { // Verificar se os elementos estao presentes do email
-      alert("EMAIL INVALIDO");
+      document.getElementById("email_resposta").innerHTML = "EMAIL INVALIDO";
+      Resposta_Email = false;
+      Validacao();
    }
    else{
-      alert("EMAIL VALIDO");
-      validacoes = validacoes + 1;
+      document.getElementById("email_resposta").innerHTML = "";
+      Resposta_Email = true;
+      Validacao();
    }
 })

@@ -9,12 +9,13 @@
 <body>
   <div class="box">
     <div class="formulario">
-      <form class="principal__formulario" id="formulario" target="_blank" onsubmit="Botao_enviar()">
+      <form class="principal__formulario" id="formulario" target="_blank">
         <label>E-mail:</label> 
         <input name="email" type="text" class="input" id="campo_email" placeholder="Digite seu Email" required>
+        <p id="email_resposta"></p>
         <label>CPF:</label> 
-        <input type="text" id="campo_cpf" placeholder="Apenas Numeros" required>    
-
+        <input type="text" id="campo_cpf" placeholder="Apenas Numeros" required>
+        <p id="cpf_resposta"></p>    
         <input class="submit" type="submit" value="Enviar formulario" id="enviar">
       </form>
     </div>

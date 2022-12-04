@@ -30,6 +30,15 @@
     font-size: 18px;
     line-height: 27px;
   }
+
+  p {
+    margin: 0 30px;
+    color: #FF0000;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 20px;
+  }
   
   input {
     
