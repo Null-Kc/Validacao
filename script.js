@@ -1,3 +1,22 @@
+//VARIAVEIS
+validacoes = 0;
+
+
+//BOTÃO
+let botao = document.querySelector('#enviar');
+
+function Botao_enviar(){ // Faz a verificacao dos campos para enviar o formulario
+   if(validacoes == 2){
+      location.replace('./cadastro-finalizado.html')
+   }
+
+   else {
+      alert("DIGITE CAMPOS VALIDOS");
+      document.location.reload(false);
+   }
+}
+
+
 //CPF 
 let Cpf = document.querySelector('#campo_cpf');
 
@@ -101,23 +120,21 @@ Cpf.addEventListener("blur", function(e) {
 
          if(Verificacao_Cpf == true){
             alert("CPF VALIDO");
-         }
+            validacoes = validacoes + 1;
+         } 
+
          else {
             alert("CPF INVALIDO");
-         }   
+         }
       }
+      
       else {
          alert("CPF INVALIDO");
-      }  
-
-   }
-
-   else { // se o cpf nao tiver onze numeros esta errado
-      
-      alert("O CPF Nao tem 11 Numeros");
+      }
    }
 
 });
+
 
 //EMAIL
 let value_email = document.querySelector('#campo_email');
@@ -129,5 +146,6 @@ value_email.addEventListener("blur", function(e) {
    }
    else{
       alert("EMAIL VALIDO");
+      validacoes = validacoes + 1;
    }
 })
