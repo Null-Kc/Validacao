@@ -10,17 +10,16 @@ function Validacao(){ // Verifica se os campos estao validados
       validacoes = 2;
       
    }
-   if(Resposta_cpf == false && Resposta_Email  == true){
+   if(Resposta_cpf == false && Resposta_Email  == true || Resposta_cpf == true && Resposta_Email  == false){
       validacoes = 1;
       
    }
-   if(Resposta_cpf == true && Resposta_Email  == false){
-      validacoes = 1;
-   }
 
    if(Resposta_cpf == false && Resposta_Email  == false){
-      validacoes = 1;
+      validacoes = 0;
    }
+
+   console.log(validacoes);
 }
 
 //BOTÃO
