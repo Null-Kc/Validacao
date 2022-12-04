@@ -3,23 +3,21 @@ Resposta_cpf = "";
 
 Resposta_Email = "";
 
-validacoes = 0;
+validacoes = "";
 
 function Validacao(){ // Verifica se os campos estao validados
    if(Resposta_cpf == true && Resposta_Email  == true){
-      validacoes = 2;
+      validacoes = true;
       
    }
    if(Resposta_cpf == false && Resposta_Email  == true || Resposta_cpf == true && Resposta_Email  == false){
-      validacoes = 1;
+      validacoes = false;
       
    }
 
    if(Resposta_cpf == false && Resposta_Email  == false){
-      validacoes = 0;
+      validacoes = false;
    }
-
-   console.log(validacoes);
 }
 
 //BOTÃO
@@ -28,7 +26,7 @@ let Botao = document.querySelector('#enviar');
 Botao.addEventListener("click", Botao_enviar, false);
 
 function Botao_enviar(event){ // Faz a verificacao dos campos para enviar o formulario
-   if(validacoes == 2){
+   if(validacoes == true){
       location.replace('./cadastro-finalizado.html')
    }
 
