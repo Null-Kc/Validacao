@@ -164,7 +164,6 @@ Cpf.addEventListener("blur", function(e) {
 
 });
 
-
 //EMAIL
 let Email = document.querySelector('#campo_email');
 
