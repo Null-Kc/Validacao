@@ -1,7 +1,7 @@
 
-## Tecnologias utilizadas durante o curso
+## Tecnologias utilizadas
 * Javascript
-
+* 
 ## Tecnologias utilizadas no projeto
 * HTML
 * CSS
