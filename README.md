@@ -7,7 +7,3 @@ Um site com um form onde pro forme ser enviado ele precisa de um cpf valido e de
 ## Tecnologias utilizadas no projeto
 * HTML
 * CSS
-
-## Link De Visualizacao
-[Formulario](https://validacao.vercel.app/)
-
